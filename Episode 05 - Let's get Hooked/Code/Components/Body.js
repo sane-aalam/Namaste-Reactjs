@@ -23,6 +23,12 @@ import { restaurantList } from "../Utils/restaurantList";
 // const [currentState,UpdateState] = useState()
 // There are 3 restaurants which have more than 4.5 ratings
 
+// * Diff Algorithm == re-Rendering cycle == Reconaliation Algorithm (virtual DOM)
+// Diff Algorithm = difference between old virtual DOM and new virtual DOM
+// Update the UI layer based on data layer
+// This is mostly aksed quesiton in frontend interview (React Fiber!)
+// You know everything about Diff Algorithm!
+
 const Body = () => {
   const [restaurants, setRestaurants] = useState(restaurantList);
   return (
