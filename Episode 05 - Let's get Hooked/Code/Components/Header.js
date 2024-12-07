@@ -1,5 +1,6 @@
 import React from "react";
 import { LOGO_URL } from "../Utils/mockData";
+
 const Header = () => {
   return (
     <div className="wrapperHeader">

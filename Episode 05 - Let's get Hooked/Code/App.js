@@ -3,13 +3,13 @@ import ReactDOM from "react-dom/client";
 import "./Header.css";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
-import RestaurantList from "./Components/RestaurantList";
+import Body from "./Components/Body";
 
 const App = () => {
   return (
     <>
       <Header />
-      <RestaurantList />
+      <Body />
       <Footer />
     </>
   );

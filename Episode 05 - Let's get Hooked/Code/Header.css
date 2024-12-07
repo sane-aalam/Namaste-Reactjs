@@ -48,10 +48,30 @@
     border-bottom: 4px solid #ff5200;
 }
 
+.body{
+    margin: 0px 180px;
+}
+
+.top-raing-button button{
+  border: 1px solid gray;
+  border-radius: 3px;
+  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #02060CBF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 8px .8em;
+}
+
 .res-list{
     display: flex;
     flex-wrap: wrap;
-    margin: 0px 180px;
     width: 1350px;
 }
 
