@@ -37,7 +37,7 @@ const Body = () => {
         <button
           onClick={() => {
             const resFilterData = restaurants.filter((res) => {
-              return res.info.avgRating > 4.5;
+              return res.info.avgRating > 4.3;
             });
             // update the state of restaurants list
             setRestaurants(resFilterData);
