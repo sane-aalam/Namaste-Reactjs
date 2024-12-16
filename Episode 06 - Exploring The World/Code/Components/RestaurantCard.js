@@ -11,8 +11,9 @@ const RestaurantCard = (props) => {
     avgRating,
     cuisines,
     costForTwo,
-    deliveryTime,
+    sla,
   } = restaurantData?.info;
+  const { slaString } = sla;
 
   return (
     <div className="restaurant_card">
@@ -35,9 +36,9 @@ const RestaurantCard = (props) => {
             star
           </span>
           <p>{avgRating}</p>
-          <p>{costForTwo}</p>
-          <p>{deliveryTime} mins</p>
+          <p> • {slaString}</p>
         </div>
+        <p className="costforTwo">{costForTwo}</p>
         <div className="location-section">
           <p>
             {cuisines.join(", ").slice(0, 30)}

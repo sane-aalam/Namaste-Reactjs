@@ -1,0 +1,12 @@
+
+
+// useEffect ->
+// Whenever our component render into UI, after render the component, this function is called.
+// Don't make complicate things in your mind, Just normal javascript
+// After components -> render -> useEffect(called!)
+// useEffect is callback function which take two arguments (callbackfunction,dependency array[]);
+
+// 2nd Apporach we will follow
+// AppLoads -> render (fake UI) -> call API -> render original DATA(UI)
+// take Swiggy API(real) ->
+// https://foodfire.onrender.com/api/restaurants?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING

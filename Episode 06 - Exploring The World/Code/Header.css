@@ -30,7 +30,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1200px;
+    width: 1100px;
 }
 
 .nav-item{
@@ -53,15 +53,15 @@
 }
 
 .top-raing-button button{
-  border: 1px solid gray;
+  border:none;
   border-radius: 3px;
   box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
   box-sizing: border-box;
-  color: #02060CBF;
+  color: #02060CEF;
   cursor: pointer;
   display: inline-block;
   font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
-  font-size: 14px;
+  font-size: 24px;
   font-weight: bold;
   line-height: 1.15385;
   margin: 0;
@@ -124,6 +124,12 @@
 }
 
 .location-section p{
+    font-size: 16px;
+    color: #02060C99;
+    margin-top: 4px;
+}
+
+.costforTwo{
     font-size: 16px;
     color: #02060C99;
     margin-top: 4px;
