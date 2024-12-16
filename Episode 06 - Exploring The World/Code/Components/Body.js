@@ -5,6 +5,8 @@ import SimmerEffect from "./SimmerEffect";
 
 const Body = () => {
   const [Listrestaurants, setListRestaurants] = useState([]);
+  const [filteredResaurantList, setFilteredResaurantList] = useState([]);
+  const [SearchText, SetSearchText] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -15,28 +17,54 @@ const Body = () => {
       "https://foodfire.onrender.com/api/restaurants?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING"
     );
     const jsonResponse = await data.json();
-    // understand the api(json viewer oline)
-    // jsonResponse.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+    // concepts(copy data only changed not original data is changed!)
+    // call by value
+    // call by reference
+
     setListRestaurants(
-      jsonResponse.data.cards[1].card.card.gridElements.infoWithStyle
-        .restaurants
+      jsonResponse?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants
+    );
+    setFilteredResaurantList(
+      jsonResponse?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants
     );
   }
-  
-  // When User goes to SimmerUI
-  if (Listrestaurants == 0) {
-    return <SimmerEffect />;
-  }
 
-  return (
+  // When User goes to SimmerUI
+  // conditional rendering
+  return Listrestaurants.length === 0 ? (
+    <SimmerEffect />
+  ) : (
     <div className="body">
+      <div className="searchText">
+        <input
+          className="search-input"
+          type="text"
+          value={SearchText}
+          onChange={(event) => {
+            SetSearchText(event.target.value);
+          }}
+        />
+        <button
+          className="search-button"
+          onClick={() => {
+            const filterResaurant = Listrestaurants.filter((res) => {
+              res.info.name.toLowerCase().includes(SearchText.toLowerCase());
+            });
+            console.log(filterResaurant);
+            setFilteredResaurantList(filterResaurant);
+          }}
+        >
+          Search Restaurants
+        </button>
+      </div>
       <div className="top-raing-button">
         <button
           onClick={() => {
-            const resFilterData = Listrestaurants.filter((res) => {
-              return res.info.avgRating > 4.3;
+            const resFilterData = filteredResaurantList.filter((res) => {
+              return res.info.avgRating > 4.5;
             });
-            // update the state of restaurants list
             setListRestaurants(resFilterData);
           }}
         >
@@ -44,7 +72,7 @@ const Body = () => {
         </button>
       </div>
       <div className="res-list">
-        {Listrestaurants.map((restaurant) => (
+        {filteredResaurantList.map((restaurant) => (
           <RestaurantCard
             key={restaurant.info.id}
             restaurantData={restaurant}

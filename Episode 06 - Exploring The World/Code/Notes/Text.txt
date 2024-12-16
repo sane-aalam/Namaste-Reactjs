@@ -1,12 +1,16 @@
 
 
-// useEffect ->
-// Whenever our component render into UI, after render the component, this function is called.
-// Don't make complicate things in your mind, Just normal javascript
-// After components -> render -> useEffect(called!)
-// useEffect is callback function which take two arguments (callbackfunction,dependency array[]);
+useEffect ->
+Whenever our component render into UI, after render the component, this function is called.
+Don't make complicate things in your mind, Just normal javascript
+After components -> render -> useEffect(called!)
+useEffect is callback function which take two arguments (callbackfunction,dependency array[]);
 
-// 2nd Apporach we will follow
-// AppLoads -> render (fake UI) -> call API -> render original DATA(UI)
-// take Swiggy API(real) ->
-// https://foodfire.onrender.com/api/restaurants?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING
+2nd Apporach we will follow
+AppLoads -> render (fake UI) -> call API -> render original DATA(UI)
+take Swiggy API(real) ->
+https://foodfire.onrender.com/api/restaurants?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING
+
+
+To fix the "net::ERR_FAILED" error, ->
+ you can try: checking your internet connection, clearing your browser cache and cookies, verifying the URL spelling, restarting your router, temporarily disabling security software, trying a different browser, or contacting the website administrator if the issue persists
